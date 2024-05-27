@@ -33,7 +33,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/login', {
+      const response = await fetch('https://presidio-rentify-4xlt.vercel.app/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

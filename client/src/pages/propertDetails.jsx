@@ -35,7 +35,7 @@ const PropertyDetails = () => {
     useEffect(() => {
         const fetchProperty = async () => {
             try {
-                const response = await axios.get(`https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/properties/${id}`,
+                const response = await axios.get(`https://presidio-rentify-4xlt.vercel.app/properties/${id}`,
                   {
                     headers: {
                       Authorization: `Bearer ${token}`,

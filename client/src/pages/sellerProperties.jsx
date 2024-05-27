@@ -12,7 +12,7 @@ const SellerProperties = () => {
     }, []);
 
     const fetchProperties = async () => {
-        const response = await axios.get('https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/seller',
+        const response = await axios.get('https://presidio-rentify-4xlt.vercel.app/seller',
         {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -23,7 +23,7 @@ const SellerProperties = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/properties/${id}`,
+            await axios.delete(`https://presidio-rentify-4xlt.vercel.app/properties/${id}`,
             {
                 headers: {
                   Authorization: `Bearer ${token}`,

@@ -22,7 +22,7 @@ const UpdateProperty = () => {
     useEffect(() => {
         if (id) {
             const fetchProperty = async () => {
-                const response = await axios.get(`https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/properties/${id}`, {
+                const response = await axios.get(`https://presidio-rentify-4xlt.vercel.app/properties/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -63,7 +63,7 @@ const UpdateProperty = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = id ? `https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/properties/${id}` : 'https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/properties';
+        const url = id ? `https://presidio-rentify-4xlt.vercel.app/properties/${id}` : 'https://presidio-rentify-4xlt.vercel.app/properties';
         const method = id ? 'put' : 'post';
 
         try {
