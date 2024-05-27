@@ -15,7 +15,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/properties', {
+        const response = await axios.get('https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/properties', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

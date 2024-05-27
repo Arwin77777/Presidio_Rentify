@@ -36,7 +36,7 @@ function Register() {
     console.log(JSON.stringify(formData));
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/register', {
+      const response = await fetch('https://presidio-rentify-4xlt-kkwhjri8q-azack77s-projects.vercel.app/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
