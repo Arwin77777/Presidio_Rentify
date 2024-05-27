@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export const Home = () => {
   const [properties, setProperties] = useState([]);
   const token = localStorage.getItem('token');
-  const username = token ? jwtDecode(token).firstName : null; // Assuming the token has a username field
+  const username = token ? jwtDecode(token).username : null; // Assuming the token has a username field
 
   useEffect(() => {
     const fetchProperties = async () => {
