@@ -1,17 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config();
 
 const { register, login } = require('./controllers/auth');
 const { authenticate, authorizeAdmin } = require('./middleware/auth');
-const { addProduct, updateProduct, deleteProduct } = require('./controllers/product');
 const { addProperty, getProperty, updateProperty, deleteProperty, getAllProperties,getPropertiesBySeller } = require('./controllers/propertiesController');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
-mongoose.connect("mongodb+srv://arwinsekar213:Arwin123@crupapidb.wpc4cex.mongodb.net/?retryWrites=true&w=majority&appName=CrupAPIDB", {
+console.log(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => console.log('Connected to MongoDB'))
