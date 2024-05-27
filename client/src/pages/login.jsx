@@ -48,6 +48,8 @@ function Login() {
         // Decode the token to find out the user type
         const decodedToken = jwtDecode(data.token);
         console.log(decodedToken.userType);
+        localStorage.setItem('username',decodedToken.username);
+
         if (decodedToken.userType === 'seller') {
           navigate('/seller-properties'); // Navigate to seller properties if user is a seller
         } else {

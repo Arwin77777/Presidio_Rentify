@@ -37,8 +37,8 @@ const login = async (req, res, next) => {
         if (!passwordMatch) {
             return res.status(401).json({ message: 'Incorrect password' });
         }
-
-        const token = jwt.sign({ userId: user._id, userType: user.userType }, "whjg72tb6732t", {
+        const username = user.firstName+" "+user.lastName;
+        const token = jwt.sign({ userId: user._id, userType: user.userType , username:username , phoneNumber : user.phoneNumber }, "whjg72tb6732t", {
             expiresIn: '1 hour'
         });
         res.json({ token });

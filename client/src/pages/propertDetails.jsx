@@ -1,13 +1,36 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import emailjs from '@emailjs/browser' 
+import {jwtDecode} from 'jwt-decode';
 const PropertyDetails = () => {
     const { id } = useParams();
     const [property, setProperty] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const token = localStorage.getItem('token');
+    // const username = localStorage.getItem('username');
+    function sendEmail(e)
+    {
+        const details = e;
+        const decoded = jwtDecode(token);
+        const name = decoded.username;
+        const phoneNumber = decoded.phoneNumber;
+        
+        details.username = name;
+        details.phoneNumber = phoneNumber;
+        console.log(details);
+        emailjs.send('service_ju8t5tr',
+        'template_w2gng7d',
+        details,
+        'xNwQn8UBjxDukCjle'
+        ).then(res=>{
+        console.log(res);
+        alert("Your message has been sent!");
+        }).catch(err=>console.log(err))
+
+        
+    }
 
     useEffect(() => {
         const fetchProperty = async () => {
@@ -52,6 +75,7 @@ const PropertyDetails = () => {
                     </div>
                 )}
             </div>
+            <button onClick={()=>sendEmail(property)}>Contact</button>
         </div>
     );
 };
